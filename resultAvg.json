@@ -1,0 +1,100 @@
+{
+    "Restaurante": {
+        "Bebidas": {
+            "Guaraná": {
+                "preco": 9.0
+            },
+            "Suco": {
+                "preco": 6.0
+            },
+            "Água": {
+                "preco": 5.0
+            }
+        },
+        "Refeições": {
+            "Alaminuta": {
+                "preco": 28.0
+            },
+            "Churrasco": {
+                "preco": 31.9
+            }
+        },
+        "avgPrice": 18.5
+    },
+    "Comida Asiatica": {
+        "Bebidas": {
+            "Guaraná": {
+                "preco": 9.0
+            },
+            "Água": {
+                "preco": 5.0
+            }
+        },
+        "Japonesa": {
+            "Sushi": {
+                "preco": 70.0
+            },
+            "Temaki": {
+                "preco": 20.9
+            }
+        },
+        "Oriental": {
+            "Sushi": {
+                "preco": 70.0
+            },
+            "Temaki": {
+                "preco": 20.9
+            },
+            "Rolinho Primavera": {
+                "preco": 15.9
+            }
+        },
+        "Refeições": {
+            "Sushi": {
+                "preco": 70.0
+            }
+        },
+        "Chinesa": {
+            "Rolinho Primavera": {
+                "preco": 15.9
+            }
+        },
+        "avgPrice": 38.84285714285714
+    },
+    "Fast Lanches": {
+        "Lanche": {
+            "Xis Frango": {
+                "preco": 30.0
+            },
+            "Xis Carne": {
+                "preco": 31.0
+            },
+            "Xis Coração": {
+                "preco": 36.5
+            },
+            "Hamburguer": {
+                "preco": 28.5
+            },
+            "Batata frita": {
+                "preco": 15.0
+            }
+        },
+        "Bebidas": {
+            "Guaraná": {
+                "preco": 9.0
+            },
+            "Suco": {
+                "preco": 6.0
+            },
+            "Água": {
+                "preco": 5.0
+            }
+        },
+        "Fast food": {
+            "Hamburguer": {
+                "preco": 28.5
+            }
+        },
+        "avgPrice": 33.94
+    }
+}
