@@ -44,35 +44,24 @@ file = open('resultAvg.json', 'w', encoding='UTF-8')
 
 
 #lógica final do código
-for indice_lugar in lista_lugares:
-  #posições da lista de lugares(cada posição é um dicionario)
-  #print(indice_lugar)
-  #limpa o dicionario_categorias
-  dicionario_categorias.clear()
-  #cria uma lista para armazenar as chaves-categorias
-  lista_categoria_keys = list()
-  for indice_lista_produto in lista_produtos:
-    #posições da lista de produto(cada posição é um dicionario)
-    #print(indice_lista_produto)
-    for indice_lista_categoria in lista_categorias:
-      #posições da lista de categorias(cada posição é um dicionario)
-      #print(indice_lista_categoria)
-      for indice_produto in indice_lugar["productsId"]:
-        #pega  na lista de lugares a chave'productsId' e imprime cada valor dessa lista
-        #print(indice_produto)
+for indice_lugar in lista_lugares: #pega posições da lista de lugares(cada posição é um dicionario)
+  dicionario_categorias.clear()#limpa o dicionario_categorias
+  lista_categoria_keys = list()#cria uma lista para armazenar as chaves-categorias
+  for indice_lista_produto in lista_produtos:#pega posições da lista de produto(cada posição é um dicionario)
+    for indice_lista_categoria in lista_categorias:#pega posições da lista de categorias(cada posição é um dicionario) 
+      for indice_produto in indice_lugar["productsId"]: #pega  na lista de lugares a chave'productsId' e imprime cada valor dessa lista
         if (indice_lista_produto["id"] == indice_produto): #compara o id do produto com a lista de 'productsId'
-          for indice_categoria in indice_lista_produto["categoriesId"]:
-             #pega  na lista de produtos a chave'categoriesId' e imprime cada valor dessa lista
-            #print(indice_categoria)
+          for indice_categoria in indice_lista_produto["categoriesId"]: #pega  na lista de produtos a chave'categoriesId' e imprime cada valor dessa lista 
+            ##fica nesse for ate preencher os produtos dentro das categorias
             if(indice_lista_categoria["id"] == indice_categoria):#compara o id da categoria com a lista de 'categoriesId'
-                dicionario_produtos[indice_lista_produto["name"]] = {"preco": (int(indice_lista_produto["price"]) / 100)} 
-                print(dicionario_produtos)
+                dicionario_produtos[indice_lista_produto["name"]] = {"price": (int(indice_lista_produto["price"]) / 100)} 
+                #print(dicionario_produtos)
                 if(indice_lista_categoria["name"] not in lista_categoria_keys):
                   dicionario_categorias[indice_lista_categoria["name"]] = {}
                   lista_produtos_price.append(int(indice_lista_produto["price"]) / 100)
-                  print(dicionario_categorias)
+                  #print(dicionario_categorias)
                 dicionario_categorias[indice_lista_categoria["name"]].update(dicionario_produtos)
-                print(dicionario_categorias)
+                #print(dicionario_categorias)
                 dicionario_produtos.clear()
                 #retorna a lista de lista_categorias
                 lista_categoria_keys = [*dicionario_categorias]
@@ -80,11 +69,11 @@ for indice_lugar in lista_lugares:
   soma = 0 
   for valores in lista_produtos_price:
     soma = soma + valores
-  dicionario_produtos_price["avgPrice"] = (soma/len(lista_produtos_price))#acresccento a nova chave 'avgPrice'
+  dicionario_produtos_price["avgPrice"] = round((soma/len(lista_produtos_price)),2)#acresccento a nova chave 'avgPrice'
   dados_json[indice_lugar["name"]] = (dicionario_categorias.copy())
   dados_json[indice_lugar["name"]].update(dicionario_produtos_price)
-  print(dados_json)
-              #d_jason = {indice_lugar["name"] : {indice_lista_categoria["name"]: {indice_lista_produto["name"]: {"preco": (int(indice_lista_produto["price"]) / 100)}}}}
+  #print(dados_json)
+             
 print(dados_json, type(dados_json)) 
            
                       
