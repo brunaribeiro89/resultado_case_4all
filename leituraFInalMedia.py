@@ -52,7 +52,7 @@ for indice_lugar in lista_lugares: #pega posições da lista de lugares(cada pos
       for indice_produto in indice_lugar["productsId"]: #pega  na lista de lugares a chave'productsId' e imprime cada valor dessa lista
         if (indice_lista_produto["id"] == indice_produto): #compara o id do produto com a lista de 'productsId'
           for indice_categoria in indice_lista_produto["categoriesId"]: #pega  na lista de produtos a chave'categoriesId' e imprime cada valor dessa lista 
-            ##fica nesse for ate preencher os produtos dentro das categorias
+            ##fica nesse for ate preencher todos produtos dentro de todas as categorias, dentro de cada lugar
             if(indice_lista_categoria["id"] == indice_categoria):#compara o id da categoria com a lista de 'categoriesId'
                 dicionario_produtos[indice_lista_produto["name"]] = {"price": (int(indice_lista_produto["price"]) / 100)} 
                 #print(dicionario_produtos)
@@ -65,7 +65,7 @@ for indice_lugar in lista_lugares: #pega posições da lista de lugares(cada pos
                 dicionario_produtos.clear()
                 #retorna a lista de lista_categorias
                 lista_categoria_keys = [*dicionario_categorias]
-                print( lista_categoria_keys)
+                #print( lista_categoria_keys)
   soma = 0 
   for valores in lista_produtos_price:
     soma = soma + valores
