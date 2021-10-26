@@ -75,12 +75,11 @@ for indice_lugar in lista_lugares:
                 lista_categoria_keys = [*dicionario_categorias]
                 print( lista_categoria_keys)
   dados_json[indice_lugar["name"]] = (dicionario_categorias.copy())
-  print(f'print d_json : {dados_json}')
+  print(dados_json)
               #d_jason = {indice_lugar["name"] : {indice_lista_categoria["name"]: {indice_lista_produto["name"]: {"preco": (int(indice_lista_produto["price"]) / 100)}}}}
 print(dados_json, type(dados_json)) 
            
-              
-              
+                      
               
       
 json.dump(dados_json,file,ensure_ascii = False, indent=4)

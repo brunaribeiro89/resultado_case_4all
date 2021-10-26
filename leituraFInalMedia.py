@@ -41,19 +41,7 @@ file.close()
 file = open('resultAvg.json', 'w', encoding='UTF-8')
 
 
-'''for indice_lugar in lista_lugares:
-  #vai na lista_lugares e imprime as posições(cada posição é um dicionario)
-  #print(f' conteudo das posicoes da lista_lugares : {indice_lugar}' )
-  for indice_produto in indice_lugar["productsId"]:
-    #vai em cada posição(cada posição é um dicionario) da lista_lugares e procura pela chave productsId e imprime os valores de id
-    #print(f'valores da chave productsId : {indice_produto}')
-    for indice_lista_categoria in lista_categorias:
-     for indice_lista_produto in lista_produtos:  
-      #for indice_lista_categoria in lista_categorias:
-        #print(f' conteudo das posicoes da lista_produtos : {indice_lista_produto}')
-        if (indice_lista_produto["id"] in indice_lugar["productsId"]) and (indice_lista_categoria["id"] in indice_lista_produto["categoriesId"] ):
-          d_jason = {indice_lugar["name"] : {indice_lista_categoria["name"]: {indice_lista_produto["name"]: {"preco": (int(indice_lista_produto["price"]) / 100)}}}}
-          print(d_jason, type(d_jason))'''
+
 
 #lógica final do código
 for indice_lugar in lista_lugares:
